@@ -1,0 +1,45 @@
+
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+    int n=5;
+    int izm=n%2;
+    int mass[n][n];
+    int izmy=0;
+    for(int i=0;i<n;i++){
+        if(i<(n/2)+1){
+            for(int o=0;o<n;o++){
+            if (o<n/2){
+                    if(izmy<0){
+                    mass[o][i]=-izmy;
+                    }else{
+                    mass[o][i]=izmy;
+                    }
+                izmy++;
+                }else{
+                    if(izmy<0){
+                    mass[o][i]=-izmy;
+                    }else{
+                    mass[o][i]=izmy;
+                    }
+                    izmy--;
+                }
+            cout<<mass[o][i];
+            }
+        }
+        else{
+            
+            for(int o=0;o<n;o++){
+            mass[o][i]=mass[o][i-1-izm];
+            cout<<mass[o][i];
+            
+            }izm=izm+2;
+        }
+        cout<<endl;
+        
+    }
+    return 0;
+}

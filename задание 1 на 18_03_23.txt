@@ -1,0 +1,27 @@
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+    int mass[5][5];
+    int izmo=4;
+    for(int i=0;i<5;i++){
+        for(int o=0;o<5;o++){
+            if(o==izmo){
+                mass[o][i]=1;
+                izmo--;
+            }else if(izmo>o){
+                mass[o][i]=0;
+            }else{
+                mass[o][i]=2;
+            }
+            cout<<mass[o][i];
+            
+        }cout<<endl;
+        
+    }
+    
+
+    return 0;
+}
